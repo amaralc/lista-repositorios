@@ -48,7 +48,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types':'off',
-    'no-console':'off'
-
+    'no-console':'off',
+    'react/prefer-stateless-function':'off'
   },
 };
