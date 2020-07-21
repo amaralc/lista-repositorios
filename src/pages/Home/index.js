@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
 import api from '../../services/api';
-import { Container, Form, SubmitButton } from './styles';
+import { Container, Form, SubmitButton, List } from './styles';
 
 export default class Home extends Component {
   state = {
@@ -36,7 +36,7 @@ export default class Home extends Component {
   };
 
   render() {
-    const { newRepo, loading } = this.state;
+    const { newRepo, repositories, loading } = this.state;
 
     return (
       <Container>
@@ -59,6 +59,14 @@ export default class Home extends Component {
             )}
           </SubmitButton>
         </Form>
+        <List>
+          {repositories.map((repository) => (
+            <li key={repository.name}>
+              <span>{repository.name}</span>
+              <a href="">Detalhes</a>
+            </li>
+          ))}
+        </List>
       </Container>
     );
   }
